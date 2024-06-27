@@ -2,8 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/index2": "pages/index2.js",
-  "/index3": "pages/index3.js",
   "/": "pages/index.js",
+  "/index3": "pages/index3.js",
+  "/index2": "pages/index2.js",
+  "/index5": "pages/index5.js",
   "/index4": "pages/index4.js"
 }
