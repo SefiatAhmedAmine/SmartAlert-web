@@ -1,1 +1,1 @@
-# B2BLinkAnnouncements
+# SmartAlertAnnouncements
