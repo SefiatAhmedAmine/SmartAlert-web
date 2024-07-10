@@ -1,0 +1,12 @@
+.gradientBackground {
+  background: linear-gradient(to right, #FFA07A, #FFDAB9, #FFE4B5) !important;
+}
+
+.svgBlack {
+  fill: black !important;
+}
+
+.subtitle {
+  color: black !important;
+}
+

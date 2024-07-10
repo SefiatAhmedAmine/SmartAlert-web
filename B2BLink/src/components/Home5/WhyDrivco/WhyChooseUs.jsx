@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from 'WhyChooseUs.module.css';
 
 function WhyChooseUs() {
   
@@ -9,7 +10,7 @@ function WhyChooseUs() {
           <div className="col-lg-6 d-flex align-items-center">
             <div className="drivco-content">
               <div className="section-title-2 mb-60 wow fadeInUp" data-wow-delay="200ms">
-                <h2>Why Drivco?</h2>
+                <h2>Why SmartAlert?</h2>
                 <p>To get the most accurate and up-to-date information.</p>
               </div>
               <div className="drivco-featute">

@@ -15,6 +15,7 @@ import UpcomingCars from "../components/Home1/UpcomingCars/index";
 import RecomandationCar from "../components/Home1/RecommendedCar/index";
 import TopRateUsedCars from "../components/Home1/TopRateUsedCars/index";
 import Blog from "../components/Home1/Blog/index";
+import CarListingLeftSidebar from './car-listing-left-sidebar';
 export default function Home() {
   return (
     <>
@@ -24,16 +25,16 @@ export default function Home() {
       <Banner />
       <QuickLinkArea />
       <BrandCategory />
-      <MostSearchedUsersCar />
-      <RecentLaunchedCar />
+      {/* <MostSearchedUsersCar /> */}
+      {/* <RecentLaunchedCar /> */}
       <WhyChoose />
-      <UpcomingCars />
-      <RecomandationCar />
-      <TopRateUsedCars />
-      <CompareCar />
-      <ShopCard />
-      <Testimonial />
-      <Blog />
+      {/* <UpcomingCars /> */}
+      {/* <RecomandationCar /> */}
+      {/* <TopRateUsedCars /> */}
+      {/* <CompareCar /> */}
+      {/* <ShopCard /> */}
+      {/* <Testimonial /> */}
+      {/* <Blog /> */}
       <Footer1 />
     </>
   );

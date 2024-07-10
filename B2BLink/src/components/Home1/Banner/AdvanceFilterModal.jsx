@@ -21,7 +21,7 @@ function AdvanceFilterModal() {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="bi bi-x" /></button>
             <div className="modal-body">
                 <form>
-                <h5 className="main-title">Advanced Option</h5>
+                <h5 className="main-title">Option Avancees</h5>
                 <div className="row">
                     <div className="col-md-12 mb-30">
                     <div className="form-inner">
@@ -32,19 +32,19 @@ function AdvanceFilterModal() {
                     <div className="row mb-10">
                     <div className="col-md-6 mb-20">
                         <div className="form-inner">
-                        <label>Select Brand </label>
-                        <SelectComponent options={selectBrand} placeholder="Select Brand" />
+                        <label>Selectionner marque </label>
+                        <SelectComponent options={selectBrand} placeholder="Selectionner marque" />
                         </div>
                     </div>
                     <div className="col-md-6 mb-20">
                         <div className="form-inner">
-                        <label>Select Body Type</label>
+                        <label>Selectionner type</label>
                         <SelectComponent options={selectTypeBody} placeholder="Select Body Type" />
                         </div>
                     </div>
                     <div className="col-md-6 mb-20">
                         <div className="form-inner">
-                        <label>Select Fuel Type </label>
+                        <label>Selectionner le type de carburant </label>
                         <SelectComponent options={selectTypeFuel} placeholder="Select Fuel Type" />
                         </div>
                     </div>
@@ -67,17 +67,17 @@ function AdvanceFilterModal() {
                         </div>
                     </div>
                     </div>
-                    <h5>Year &amp; Mileage</h5>
+                    <h5>Annee &amp; Kilometrage</h5>
                     <div className="row">
                     <div className="col-md-6 mb-20">
                         <div className="form-inner">
-                        <label>Select Year </label>
+                        <label>Selectionner l'annee </label>
                         <SelectComponent options={selectYear} placeholder="select year" />
                         </div>
                     </div>
                     <div className="col-md-3 mb-20">
                         <div className="form-inner">
-                        <label>Select Min (miles)</label>
+                        <label>Selectionner Min (miles)</label>
                         <SelectComponent options={selectMinMiles} placeholder="select Min miles" />
                         </div>
                     </div>

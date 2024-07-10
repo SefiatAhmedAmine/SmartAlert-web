@@ -15,7 +15,7 @@
   --black-color2: #1D1D1D;
   --title-color: #13141A;
   --text-color: #5E5E5E;
-  --primary-color1: #46D993;
+  --primary-color1: #E17253;
 }
 
 /*================================================
@@ -633,7 +633,7 @@ p {
 
 .primary-btn3 {
   border-radius: 5px;
-  background-color: var(--primary-color1);
+  background-color: var(--white-color);
   font-family: var(--font-open-sans);
   font-weight: 600;
   font-size: 15px;
@@ -681,10 +681,10 @@ p {
   stroke: var(--title-color);
 }
 .primary-btn3:hover {
-  color: var(--white-color);
+  color: var(--primary-color1);
 }
 .primary-btn3:hover svg {
-  fill: var(--white-color);
+  fill: var(--primary-color1);
 }
 .primary-btn3:hover.two svg path:first-child {
   fill: none;

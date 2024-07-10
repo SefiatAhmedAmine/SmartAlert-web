@@ -1,7 +1,62 @@
-import React from 'react'
-import SelectComponent from '@/src/utils/SelectComponent'
+import React, { useState } from 'react';
+import SelectComponent from '@/src/utils/SelectComponent';
+import { useAuth } from '@/src/contexts/AuthContext';
 
 function Modals() {
+    const { login, signup } = useAuth();
+
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const handleSignupChange = (e) => {
+        const { name, value } = e.target;
+        if (name === 'firstName') setFirstName(value);
+        if (name === 'lastName') setLastName(value);
+        if (name === 'email') setEmail(value);
+        if (name === 'password') setPassword(value);
+        if (name === 'confirmPassword') setConfirmPassword(value);
+    };
+    
+    const handleSignupSubmit = async (e) => {
+      e.preventDefault();
+      console.log(firstName, lastName, email, password, confirmPassword);
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+      try {
+        await signup({ firstName, lastName, email, password });
+        alert('Signup successful');
+      } catch (error) {
+        alert('Signup failed: ' + error.message);
+      } 
+    };
+    
+    const [loginEmail, setLoginEmail] = useState('');
+    const [loginPassword, setLoginPassword] = useState('');
+
+    const handleLoginChange = (e) => {
+        const { name, value } = e.target;
+        if (name == 'email') setLoginEmail(value);
+        if (name == 'password') setLoginPassword(value);
+    };
+
+    
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            console.log(loginEmail, loginPassword);
+            await login(loginEmail, loginPassword);
+            alert('Login successful');
+        } catch (error) { 
+            alert('Login failed: ' + error.message);
+        }     
+    };
+
+
     const city = ["Sydne City, Australia"," Dhaka, Bangladesh","Tokyo, Japan"]
     const brand = ["Mercedes Benz","Volkswagen","Mitsubishi","Tesla"]
     const body = ["Hatchback","Covertible","Coupe","Truck"]
@@ -16,7 +71,8 @@ function Modals() {
     const priceMax = ["$2,234","$3,234","$4,234","$5,234"]
   return (
     <>
-        <div className="modal signUp-modal fade" id="signUpModal01" tabIndex={-1} aria-labelledby="signUpModal01Label" aria-hidden="true">
+    <div className='z-3'>
+        <div className="modal signUp-modal fade z-3" id="signUpModal01" tabIndex={-1} aria-labelledby="signUpModal01Label" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
                 <div className="modal-header">
@@ -25,43 +81,44 @@ function Modals() {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="bi bi-x" /></button>
                 </div>
                 <div className="modal-body">
-                <form>
+                <form onSubmit={handleSignupSubmit}>
                     <div className="row g-4">
                     <div className="col-md-6">
                         <div className="form-inner">
                         <label>First Name*</label>
-                        <input type="text" placeholder="Daniel" />
+                        {/* <input type="text" placeholder="Mohieddine" onChange={handleSignupChange} /> */}
+                        <input type="text" name="firstName" id="firstName" value={firstName} onChange={handleSignupChange} />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="form-inner">
                         <label>Last Name*</label>
-                        <input type="text" placeholder="Last name" />
+                        <input type="text" placeholder="Last name"  name="lastName" id="lastName" value={lastName} onChange={handleSignupChange} />
                         </div>
                     </div>
                     <div className="col-md-12">
                         <div className="form-inner">
                         <label>Enter your email address*</label>
-                        <input type="email" placeholder="Type email" />
+                        <input type="email" placeholder="Type email" name="email" id="email" value={email} onChange={handleSignupChange} />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="form-inner"> 
                         <label>Password*</label>
-                        <input id="password" type="password" placeholder="*** ***" />
+                        <input id="password" type="password" placeholder="*** ***" name="password" value={password} onChange={handleSignupChange} />
                         <i className="bi bi-eye-slash" id="togglePassword" />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="form-inner">
                         <label>Confirm Password*</label>
-                        <input id="password2" type="password" placeholder="*** ***" />
+                        <input id="password2" type="password" placeholder="*** ***"  name="confirmPassword" value={confirmPassword} onChange={handleSignupChange} />
                         <i className="bi bi-eye-slash" id="togglePassword2" />
                         </div>
                     </div>
                     <div className="col-md-12">
                         <div className="form-inner">
-                        <button className="primary-btn2" type="submit">Sign Up Now</button>
+                        <button className="primary-btn2" type="submit" onClick={handleSignupSubmit}>Sign Up Now</button>
                         </div>
                     </div>
                     </div>
@@ -78,7 +135,7 @@ function Modals() {
             </div>
             </div>
         </div>
-        <div className="modal signUp-modal fade" id="logInModal01" tabIndex={-1} aria-labelledby="logInModal01Label" aria-hidden="true">
+        <div className="modal signUp-modal fade z-3" id="logInModal01" tabIndex={-1} aria-labelledby="logInModal01Label" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
                 <div className="modal-header">
@@ -87,18 +144,18 @@ function Modals() {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="bi bi-x" /></button>
                 </div>
                 <div className="modal-body">
-                <form>
+                <form onSubmit={handleLoginSubmit}>
                     <div className="row g-4">
                     <div className="col-md-12">
                         <div className="form-inner">
                         <label>Enter your email address*</label>
-                        <input type="email" placeholder="Type email" />
+                        <input type="email" placeholder="Type email" name='email' value={loginEmail} onChange={handleLoginChange} />
                         </div>
                     </div>
                     <div className="col-md-12">
                         <div className="form-inner"> 
                         <label>Password*</label>
-                        <input id="password3" type="password" placeholder="*** ***" />
+                        <input id="password3" type="password" placeholder="*** ***" name='password' value={loginPassword} onChange={handleLoginChange} />
                         <i className="bi bi-eye-slash" id="togglePassword3" />
                         </div>
                     </div>
@@ -130,7 +187,7 @@ function Modals() {
             </div>
             </div>
         </div>
-        <div className="modal signUp-modal sell-with-us fade" id="sellUsModal01" tabIndex={-1} aria-labelledby="sellUsModal01Label" aria-hidden="true">
+        {/* <div className="modal signUp-modal sell-with-us fade" id="sellUsModal01" tabIndex={-1} aria-labelledby="sellUsModal01Label" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
                 <div className="modal-header">
@@ -224,9 +281,9 @@ function Modals() {
                 </div>
             </div>
             </div>
-        </div>
+        </div> */}
         {/* Advance-search-modal */}
-        <div className="modal adSearch-modal fade" id="adSearchModal01" tabIndex={-1} aria-hidden="true">
+        {/* <div className="modal adSearch-modal fade" id="adSearchModal01" tabIndex={-1} aria-hidden="true">
             <div className="modal-dialog modal-lg modal-dialog-centered">
             <div className="modal-content">
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="bi bi-x" /></button>
@@ -339,8 +396,8 @@ function Modals() {
                 </div>
             </div>
             </div>
-        </div>
-        <div className="modal adSearch-modal fade" id="bidsModal01" tabIndex={-1} aria-hidden="true">
+        </div> */}
+        {/* <div className="modal adSearch-modal fade" id="bidsModal01" tabIndex={-1} aria-hidden="true">
         <div className="modal-dialog modal-lg modal-dialog-centered">
             <div className="modal-content">
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="bi bi-x" /></button>
@@ -397,9 +454,9 @@ function Modals() {
             </div>
             </div>
          </div>
-        </div>
+        </div> */}
+    </div>
     </>
-
   )
 }
 

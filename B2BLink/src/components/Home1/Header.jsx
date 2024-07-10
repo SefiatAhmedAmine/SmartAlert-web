@@ -82,18 +82,18 @@ function Header() {
         </div>
         <ul className="menu-list">
         <li className={`menu-item-has-children ${ currentRoute === "/" ? "active" : ""}`}>
-            <a href="#" className={`drop-down ${state.activeMenu === "home-one" ? "active" : ""}`}>Home</a><i  onClick={() => toggleMenu("home-one")} className={`bi bi-${state.activeMenu === "home-one" ?"dash":"plus"} dropdown-icon`} />
-            <ul className={`sub-menu ${ state.activeMenu === "home-one" ? "d-block" : ""}`}>
+            <a href="#" className={`drop-down ${state.activeMenu === "home-one" ? "active" : ""}`}>Accueil</a><i  onClick={() => toggleMenu("home-one")} className={`bi bi-${state.activeMenu === "home-one" ?"dash":"plus"} dropdown-icon`} />
+            {/* <ul className={`sub-menu ${ state.activeMenu === "home-one" ? "d-block" : ""}`}>
               <li><Link legacyBehavior href="/"><a className="active">Home 01</a></Link></li>
               <li><Link legacyBehavior href="/index2"><a>Home 02</a></Link></li>
               <li><Link legacyBehavior href="/index3"><a>Home 03</a></Link></li>
               <li><Link legacyBehavior href="/index4"><a>Home 04</a></Link></li>
               <li><Link legacyBehavior href="/index5"><a>Home 05</a></Link></li>
               <li><Link legacyBehavior href="/index6"><a>Home 06</a></Link></li>
-            </ul>
+            </ul> */}
           </li>
           <li className="position-inherit">
-            <a href="#" className="drop-down">NEW CAR</a>
+            <a href="#" className="drop-down">NEUF</a>
             <i onClick={() => toggleMenu("new-car")} className={`bi bi-${state.activeMenu === "new-car" ?"dash":"plus"} dropdown-icon`} />
             <div className={`mega-menu ${state.activeMenu === "new-car"?"d-block":""}`}>
               <ul className="menu-row">
@@ -149,7 +149,7 @@ function Header() {
             </div>
         </li>
       <li className="position-inherit">
-        <a href="#" className="drop-down">USED CAR</a>
+        <a href="#" className="drop-down">OCCASION</a>
         <i onClick={() => toggleMenu("use-car")} className={`bi bi-${state.activeMenu === "use-car" ?"dash":"plus"} dropdown-icon`} />
         <div className={`mega-menu ${state.activeMenu === "use-car"?"d-block":""}`}>
           <ul className="menu-row">
@@ -205,10 +205,10 @@ function Header() {
         </div>
       </li>
           <li className="menu-item-has-children">
-          <a href="#" className="drop-down">Pages</a><i onClick={() => toggleMenu("pages")} className={`bi bi-${state.activeMenu === "pages" ?"dash":"plus"} dropdown-icon`} />
+          <a href="#" className="drop-down">MENU</a><i onClick={() => toggleMenu("pages")} className={`bi bi-${state.activeMenu === "pages" ?"dash":"plus"} dropdown-icon`} />
           <ul className={`sub-menu ${ state.activeMenu === "pages" ? "d-block" : ""}`}>
-              <li><Link legacyBehavior href="/about"><a>About Us</a></Link></li>
-              <li><Link legacyBehavior href="/brand-category"><a>Brand Category</a></Link></li>
+              <li><Link legacyBehavior href="/about"><a>A Propos</a></Link></li>
+              <li><Link legacyBehavior href="/brand-category"><a>Categories</a></Link></li>
               <li><Link legacyBehavior href="/single-brand-category"><a>Single Brand Category</a></Link></li>
               <li>
                 <a href="#">Car Listing System</a>
@@ -250,7 +250,10 @@ function Header() {
             </ul>
           </li>
           <li>
-            <Link legacyBehavior href="/contact"><a  className="drop-down">CONTACT US</a></Link>
+            <Link legacyBehavior href="/contact"><a  className="drop-down">NOUS CONTACTER</a></Link>
+          </li>
+          <li>
+            <Link legacyBehavior href="/contact"><a  className="drop-down">FAVORIS</a></Link>
           </li>
         </ul>
         <div className="topbar-right d-lg-none d-block">
@@ -284,7 +287,7 @@ function Header() {
             </svg>
           </div>
           <div className="content">
-            <span>To More Inquiry</span>
+            <span>Pour plus d'informations</span>
             <h6><a href="tel:+990737621432">+990-737 621 432</a></h6>
           </div>
         </div>
@@ -297,7 +300,7 @@ function Header() {
             <img src="assets/img/home1/icon/hotline-icon.svg" alt="" />
           </div>
           <div className="content">
-            <span>To More Inquiry</span>
+            <span>Pour plus d'informations</span>
             <h6><a href="tel:+990737621432">+990-737 621 432</a></h6>
           </div>
         </div>

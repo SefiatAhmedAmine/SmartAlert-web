@@ -1,14 +1,16 @@
 import React from 'react'
 import CountUp from 'react-countup';
+
 function index() {
   return (
-    <div className="why-choose-area pt-90 pb-90 mb-100">
+  <div className="why-choose-area pt-90 pb-90 mb-100" style={{  background: 'linear-gradient(to right, #FFA07A, #FFDAB9, #FFE4B5)'
+  }}>
       <div className="container">
         <div className="row mb-60 wow fadeInUp" data-wow-delay="200ms">
           <div className="col-lg-12 d-flex justify-content-center">
             <div className="section-title1 text-center">
-              <span>Best Car Agency</span>
-              <h2>Why Only Choose Drivco</h2>
+              <span className='text-black-500'>Best Car Agency</span>
+              <h2>Pourquoi Choisir SmartAlert</h2>
             </div>
           </div>
         </div>
