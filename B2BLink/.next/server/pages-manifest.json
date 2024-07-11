@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/car-deatils": "pages/car-deatils.js",
-  "/car-listing-left-sidebar": "pages/car-listing-left-sidebar.js"
+  "/": "pages/index.js",
+  "/single-brand-category": "pages/single-brand-category.js"
 }

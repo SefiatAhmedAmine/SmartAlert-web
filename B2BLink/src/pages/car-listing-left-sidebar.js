@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import MainLayout from '../layout/MainLayout';
 import CarLeftSidebar from '../utils/CarLeftSidebar';
 import SelectComponent from '../utils/SelectComponent';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { fetchCars } from '../utils/api'; // Ensure you have this import for your fetchCars function
+import { useCar } from '../contexts/CarContext';
+import Link from 'next/link';
 
 const preprocessCarData = (car, isNewCar) => {
   if (isNewCar) {
     return {
+      ...car,
       id: car.id,
       label: car.carLabel,
       uri: car.carUri,
-      price: car.carMinPrice || car.carMaxPrice || carPrice || 'N/A',
-      image: car.carDefaultImage || null,
+      price: car.carMinPrice || car.carMaxPrice || 'N/A',
+      image: car.carDefaultImage,
       brand: car.carBrand,
       model: car.carModel,
       fuel: car.raw?.fuel || 'N/A', // Assuming 'raw' contains the necessary info
@@ -22,11 +25,12 @@ const preprocessCarData = (car, isNewCar) => {
     };
   } else {
     return {
+      ...car,
       id: car.id,
       label: car.label,
       uri: car.carUri,
-      price: car.carPrice || 'N/A',
-      image: car.carDefautlImage || null,
+      price: car.carPrice,
+    image: car.carDefautlImage,
       brand: car.carBrand,
       model: car.carModel,
       fuel: car.carFuel?.value || 'N/A',
@@ -42,7 +46,16 @@ function CarListingLeftSidebar() {
   const [cars, setCars] = useState([]); // Initialize as an empty array
   const [currentPage, setCurrentPage] = useState(1); // Initialize currentPage state
   const [selectedCondition, setSelectedCondition] = useState('Used Car');
+  const { setCar } = useCar();
+  const router = useRouter();
   const conditions = ["Used Car", "New Car"];
+
+  useEffect(() => {
+    const { condition } = router.query;
+    if (condition) {
+      setSelectedCondition(condition === 'new' ? 'New Car' : 'Used Car');
+    }
+  }, [router.query]);
 
   useEffect(() => {
     const loadCars = async () => {
@@ -74,6 +87,11 @@ function CarListingLeftSidebar() {
     setCurrentPage(page);
   };
 
+  const handleViewDetails = (car) => {
+    setCar(car);
+    router.push('/car-deatils');
+  };
+
   // Determine the cars to display on the current page
   const carsToDisplay = cars.slice((currentPage - 1) * 10, currentPage * 10);
 
@@ -87,14 +105,14 @@ function CarListingLeftSidebar() {
               <div className="row mb-40">
                 <div className="col-lg-12">
                   <div className="show-item-and-filte">
-                    <p>Showing <strong>{cars.length}</strong> car(s) available in stock</p>
+                  <p>Affichage de <strong>{cars.length}</strong> voiture(s) disponibles en stock</p>
                     <div className="filter-view">
                       <div className="filter-atra">
-                        <h6>Filter By:</h6>
+                        <h6>Filtrer par:</h6>
                         <form>
                           <div className="form-inner">
                             <SelectComponent
-                              placeholder=" select conditions"
+                              placeholder="select conditions"
                               options={conditions}
                               value={selectedCondition}
                               onChange={(e) => setSelectedCondition(e.target.value)}
@@ -146,7 +164,7 @@ function CarListingLeftSidebar() {
                               </div>
                             </div>
                             <div className="product-content">
-                              <h5><Link legacyBehavior href="/car-details"><a>{car.label || 'No label available'}</a></Link></h5>
+                              <h5><a onClick={() => handleViewDetails(car)}>{car.label || 'No label available'}</a></h5>
                               <div className="price-location">
                                 <div className="price">
                                   <strong>${car.price}</strong>
@@ -178,17 +196,13 @@ function CarListingLeftSidebar() {
                                 )}
                               </ul>
                               <div className="content-btm">
-                                <Link legacyBehavior href="/car-deatils">
-                                  <a className="view-btn2">
-                                    {/* SVG for view details */}
-                                    View Details
-                                  </a>
-                                </Link>
+                                <a className="view-btn2" onClick={() => handleViewDetails(car)}>
+                                  {/* SVG for view details */}
+                                  View Details
+                                </a>
                                 <div className="brand">
-                                  <Link legacyBehavior href="/single-brand-category">
-                                    <a>
-                                      <img src="assets/img/home1/icon/mercedes-01.svg" alt="image" />
-                                    </a>
+                                  <Link href="/single-brand-category">
+                                    <img src="assets/img/home1/icon/mercedes-01.svg" alt="image" />
                                   </Link>
                                 </div>
                               </div>

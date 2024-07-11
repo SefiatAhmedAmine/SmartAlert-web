@@ -28,9 +28,9 @@ function index() {
         <div className="row wow fadeInUp" data-wow-delay="300ms">
           <div className="col-lg-12">
             <div className="view-btn-area">
-              <p>There has 30+ Brand Category Available </p>
+              <p>Nous disposons de plus 20+ categories de marques </p>
               <Link legacyBehavior href="/brand-category">
-                <a className="view-btn">View More</a>
+                <a className="view-btn">Voir Plus</a>
               </Link>
             </div>
           </div>

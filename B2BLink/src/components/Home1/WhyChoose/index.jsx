@@ -21,10 +21,9 @@ function index() {
                 <div className="choose-icon">
                   <img src="assets/img/home1/icon/affordable.svg" alt="" />
                 </div>
-                <h5><span>Affordable</span> Price</h5>
+                <h5><span>Prix</span> Affordable</h5>
               </div>
-              <p>An affordable price for a luxury car may be significantly higher than an affordable price for
-                a budget car...</p>
+              <p>Un prix abordable pour une voiture de luxe peut être sensiblement plus élevé qu'un prix abordable pour une voiture économique...</p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
@@ -33,10 +32,10 @@ function index() {
                 <div className="choose-icon">
                   <img src="assets/img/home1/icon/guarantee.svg" alt="" />
                 </div>
-                <h5>Money Back <span>Guarantee</span></h5>
+                <h5>Garantie <span></span></h5>
               </div>
-              <p>Some may offer a full refund with no questions asked, others may require the customer to
-                provide...</p>
+              <p>Certains proposent un remboursement intégral sans poser de questions, d'autres exigent que le client fournisse...
+              </p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
@@ -45,10 +44,10 @@ function index() {
                 <div className="choose-icon">
                   <img src="assets/img/home1/icon/warranty.svg" alt="" />
                 </div>
-                <h5>8 Month <span>Warranty</span></h5>
+                <h5>Garantie de <span>8 Mois</span></h5>
               </div>
-              <p>During this 8-month period, if the product fails to function properly due to a defect or
-                malfunction...</p>
+              <p>Pendant cette période de 8 mois, si le produit ne fonctionne pas correctement en raison d'un
+              d'un défaut ...</p>
             </div>
           </div>
         </div>
@@ -61,10 +60,10 @@ function index() {
                 </div>
                 <div className="content">
                   <div className="number">
-                    <h5 className="counter"><CountUp delay={2} end={600} /></h5>
+                    <h5 className="counter"><CountUp delay={2} end={100} /></h5>
                     <span>K+</span>
                   </div>
-                  <p>Car Available</p>
+                  <p>Voiture Disponible</p>
                 </div>
               </div>
             </div>
@@ -75,10 +74,10 @@ function index() {
                 </div>
                 <div className="content">
                   <div className="number">
-                    <h5 className="counter"><CountUp delay={2} end={400} /></h5>
+                    <h5 className="counter"><CountUp delay={2} end={40} /></h5>
                     <span>K+</span>
                   </div>
-                  <p>Car Sold</p>
+                  <p>Voiture vendue</p>
                 </div>
               </div>
             </div>
@@ -92,7 +91,7 @@ function index() {
                     <h5 className="counter"><CountUp delay={2} end={200} /></h5>
                     <span>K+</span>
                   </div>
-                  <p>Used Cars</p>
+                  <p>Voitures d'occasions</p>
                 </div>
               </div>
             </div>
@@ -106,7 +105,7 @@ function index() {
                     <h5 className="counter"><CountUp delay={2} end={80} /></h5>
                     <span>%</span>
                   </div>
-                  <p>Customer Satisfaction</p>
+                  <p>Satisfaction des clients</p>
                 </div>
               </div>
             </div>

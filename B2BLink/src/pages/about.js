@@ -100,7 +100,7 @@ function About() {
                 <div className="welcome-wrap text-center">
                   <div className="section-title1 text-center wow fadeInUp" data-wow-delay="200ms">
                     <span>(Since-1994)</span>
-                    <h2>Welcome To Drivco</h2>
+                    <h2>Welcome To B2BLink</h2>
                   </div>
                   <div className="welcome-content wow fadeInUp" data-wow-delay="300ms">
                     <p>We're passionate car agency<br /> 
