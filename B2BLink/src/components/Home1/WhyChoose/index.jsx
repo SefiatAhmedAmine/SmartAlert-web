@@ -21,9 +21,9 @@ function index() {
                 <div className="choose-icon">
                   <img src="assets/img/home1/icon/affordable.svg" alt="" />
                 </div>
-                <h5><span>Prix</span> Affordable</h5>
+                <h5><span>Interface</span> conviviale</h5>
               </div>
-              <p>Un prix abordable pour une voiture de luxe peut être sensiblement plus élevé qu'un prix abordable pour une voiture économique...</p>
+              <p>Interface utilisateur intuitive et facile à utiliser pour une expérience facile et agréable.</p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
@@ -32,9 +32,10 @@ function index() {
                 <div className="choose-icon">
                   <img src="assets/img/home1/icon/guarantee.svg" alt="" />
                 </div>
-                <h5>Garantie <span></span></h5>
+                <h5>Accés sécurisé
+                <span></span></h5>
               </div>
-              <p>Certains proposent un remboursement intégral sans poser de questions, d'autres exigent que le client fournisse...
+              <p>Respect des normes de sécurité pour une meilleure confidentialité des données.
               </p>
             </div>
           </div>
@@ -44,10 +45,9 @@ function index() {
                 <div className="choose-icon">
                   <img src="assets/img/home1/icon/warranty.svg" alt="" />
                 </div>
-                <h5>Garantie de <span>8 Mois</span></h5>
+                <h5>Portail <span>unique</span></h5>
               </div>
-              <p>Pendant cette période de 8 mois, si le produit ne fonctionne pas correctement en raison d'un
-              d'un défaut ...</p>
+              <p>Accès regroupé aux principaux sites de vente au Maroc tels qu'Avito, Wandaloo, etc.</p>
             </div>
           </div>
         </div>

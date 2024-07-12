@@ -12,6 +12,7 @@ import Script from "next/script";
 import Preloader from "../components/common/Preloader";
 import { AuthProvider } from "@/src/contexts/AuthContext";
 import { CarProvider } from "@/src/contexts/CarContext"; // Import the CarProvider
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,8 @@ function MyApp({ Component, pageProps }) {
                 type="image/gif"
                 sizes="20x20"
               />
+                            <link href="../../public/assets/img/favicon.ico" rel="icon" />
+
             </Head>
             <Preloader onClose={handlePreloaderClose} />
           </>
@@ -66,6 +69,8 @@ function MyApp({ Component, pageProps }) {
                 href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap"
                 rel="stylesheet"
               />
+
+              <link href="../../public/assets/img/favicon.ico" rel="icon" />
             </Head>
             <Component {...pageProps} />
           </>

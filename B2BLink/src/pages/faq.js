@@ -116,7 +116,7 @@ function Faq() {
             <div className="row">
                 <div className="col-lg-12">
                 <div className="section-title mb-20">
-                    <h4>If Any Inquirey, To Do Ask Somethings </h4>
+                    <h4>If Any Inquiry, To Do Ask Somethings </h4>
                 </div>
                 <form>
                     <div className="row">

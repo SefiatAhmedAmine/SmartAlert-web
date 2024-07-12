@@ -103,3 +103,40 @@ export const fetchFilteredCars = async (carType, searchDTO) => {
     throw error;
   }
 };
+
+const gpt6Token = 471732;
+
+export const login = async (email, password) => {
+  try {
+    console.log('Login request payload:', {
+      username: email,
+      password: password,
+      expoToken: gpt6Token,
+    });
+    const response = await axios.post(`${serverName}/authenticate`, {
+      username: email,
+      password: password,
+      expoToken: gpt6Token,
+    });
+    console.log('Login response:', response);
+    return response.data;
+  } catch (error) {
+    console.error('Error logging in:', error.response ? error.response.data : error.message);
+    throw error;
+  }
+};
+
+export const signup = async ({ firstName, email, password }) => {
+  try {
+    const response = await axios.post(`${serverName}/register`, {
+      email: email,
+      firstName: firstName,
+      password: password,
+      langKey: 'fr',
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error signing up', error);
+    throw error;
+  }
+};

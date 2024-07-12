@@ -462,9 +462,6 @@ function Header() {
                   </li>
                 </ul>
               </li>
-              <li>
-                <Link href="/car-deatils">Car Details </Link>
-              </li>
             </ul>
           </li>
           <li>
@@ -539,7 +536,7 @@ function Header() {
           </div>
           <div className="content">
             <span>Pour plus d'informations</span>
-            <h6><a href="tel:+990737621432">+990-737 621 432</a></h6>
+            <h6><a href="tel:+2120658176213">+06 58 17 62 13</a></h6>
           </div>
         </div>
       </div>
@@ -550,7 +547,7 @@ function Header() {
           </div>
           <div className="content">
             <span>Pour plus d'informations</span>
-            <h6><a href="tel:+990737621432">+990-737 621 432</a></h6>
+            <h6><a href="tel:+2120658176213">+06 58 17 62 13</a></h6>
           </div>
         </div>
         <div className={`sidebar-button mobile-menu-btn ${state.isSidebarOpen ? "active" : "" }`} onClick={toggleSidebar}>
