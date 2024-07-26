@@ -76,14 +76,14 @@ function Header() {
     >
       <div className="header-logo d-lg-none d-flex">
         <Link href="/">
-          <img alt="image" className="img-fluid" src="assets/img/logo.svg" />
+          <img alt="image" className="img-fluid" src="assets/img/b2blink.png" height="47" width="218" />
         </Link>
       </div>
       <div className={`main-menu ${state.isSidebarOpen ? "show-menu" : ""}`}>
         <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
           <div className="mobile-logo-wrap">
             <Link href="/">
-              <img alt="image" src="assets/img/logo.svg" />
+              <img alt="image" src="assets/img/b2blink.png" height="47" width="218" />
             </Link>
           </div>
         </div>
@@ -470,7 +470,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/contact">
+            <Link href="/car-listing-no-sidebar">
               VOS FAVORIS
             </Link>
           </li>

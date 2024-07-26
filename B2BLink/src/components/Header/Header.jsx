@@ -72,12 +72,12 @@ function Header() {
   return (
     <header ref={headerRef} className={state.scrollY > 10 ?"header-area style-1 sticky":"header-area style-1"}>
     <div className="header-logo d-lg-none d-flex">
-      <Link legacyBehavior href="/"><a><img alt="image" className="img-fluid" src="assets/img/logo.svg" /></a></Link>
+      <Link legacyBehavior href="/"><a><img alt="image" className="img-fluid" src="assets/img/b2blink.png" height="47" width="218" /></a></Link>
     </div>
     <div className={`main-menu ${state.isSidebarOpen ? "show-menu" : ""}`}>
       <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
         <div className="mobile-logo-wrap">
-          <Link legacyBehavior href="/"><a><img alt="image" src="assets/img/logo.svg" /></a></Link>
+          <Link legacyBehavior href="/"><a><img alt="image" src="assets/img/b2blink.png" height="47" width="218" /></a></Link>
         </div>
       </div>
       <ul className="menu-list">

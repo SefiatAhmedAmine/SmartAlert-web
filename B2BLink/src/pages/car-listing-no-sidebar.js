@@ -12,7 +12,7 @@ function CarListingNoSidebarPage() {
     };
   return (
     <MainLayout>
-       <ProductSearch/>
+       {/* <ProductSearch/> */}
         <div className="product-page no-sidebar mb-100">
         <div className="container">
             <div className="row g-xl-4 gy-5">
