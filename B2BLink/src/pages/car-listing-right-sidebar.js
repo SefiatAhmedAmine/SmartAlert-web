@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MainLayout from '../layout/MainLayout'
-import CarLeftSidebar from '../utils/CarLeftSidebar'
+import CarLeftSidebar from '../components/Home1/CarLeftSideBar'
 import SelectComponent from '../utils/SelectComponent'
 import Link from "next/link";
 import Testimonial from '../components/Home1/Teatimonial/index'

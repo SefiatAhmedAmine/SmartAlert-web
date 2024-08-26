@@ -36,11 +36,11 @@ function About() {
     }
     ,
     {
-      id:4,
+      id: 4,
       imageBig: "assets/img/inner-page/gallery-04.png",
     },
     {
-      id:5,
+      id: 5,
       imageBig: "assets/img/inner-page/gallery-05.png",
     }
     ,
@@ -49,80 +49,82 @@ function About() {
       imageBig: "assets/img/inner-page/gallery-06.png",
     }
   ]
-  const slideSettings = useMemo(()=>{
+  const slideSettings = useMemo(() => {
     return {
-        slidesPerView: "auto",
-        speed: 1500,
-        spaceBetween: 25,
-        loop: true,
-        autoplay: {
-            delay: 2500, // Autoplay duration in milliseconds
-        },
-        navigation: {
-            nextEl: ".next-4",
-            prevEl: ".prev-4",
-        },
+      slidesPerView: "auto",
+      speed: 1500,
+      spaceBetween: 25,
+      loop: true,
+      autoplay: {
+        delay: 2500, // Autoplay duration in milliseconds
+      },
+      navigation: {
+        nextEl: ".next-4",
+        prevEl: ".prev-4",
+      },
 
-        breakpoints: {
-            280: {
-                slidesPerView: 1,
-            },
-            386: {
-                slidesPerView: 1,
-            },
-            576: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            992: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-            1200: {
-                slidesPerView: 2,
-                spaceBetween: 24,
-            },
-            1400: {
-                slidesPerView: 2
-            },
-        }
-        }
-})
+      breakpoints: {
+        280: {
+          slidesPerView: 1,
+        },
+        386: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 1,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1200: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1400: {
+          slidesPerView: 2
+        },
+      }
+    }
+  })
   return (
     <MainLayout>
-        <div className="welcome-banner-section pb-100 pt-100">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="welcome-wrap text-center">
-                  <div className="section-title1 text-center wow fadeInUp" data-wow-delay="200ms">
-                    <span>(Depuis-2018)</span>
-                    <h2>Bienvenue à SmartAlert</h2>
-                  </div>
-                  <div className="welcome-content wow fadeInUp" data-wow-delay="300ms">
-                    <p>Nous sommes un portail exclusif qui révolutionne les annonces de voiture au Maroc !<br /> 
-                      we're thrilled to have you join our community of automotive enthusiasts and professionals. Whether you're a passionate driver, a car owner, or someone who loves all things automotive, you've come to the right place.At Drivco, we strive to create a space where people can connect, share knowledge, and explore the exciting world of automobiles. From discussing the latest car models and technologies to sharing driving tips and tricks, we're here to fuel your love for everything on wheels.Feel free to ask any questions you have, seek advice, or simply engage in friendly conversations with fellow members. Our community is full of experts and enthusiasts who are eager to share their insights and experiences.
-                      Buckle up and enjoy your journey with Drivco!</p>
-                  </div>
-                  <div className="author-area wow fadeInUp" data-wow-delay="400ms">
+      <div className="welcome-banner-section pb-100 pt-100">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="welcome-wrap text-center">
+                <div className="section-title1 text-center wow fadeInUp" data-wow-delay="200ms">
+                  <span>(Depuis-2018)</span>
+                  <h2>Bienvenue à SmartAlert</h2>
+                </div>
+                <div className="welcome-content wow fadeInUp" data-wow-delay="300ms">
+                  <p>SmartAlert est une application conçue par la société <bold>B2BLink</bold> qui révolutionne les annonces de voiture au Maroc<br />
+                    dont la finalité est d'offrir à nos chers utilisateurs un portail unique! L'application Smart Alert permet également d'émettre des alertes en temps réel <br />
+                    de chaque nouvelle annonce publiée sur ces sites. Ces notifications sont paramétrables en fonction du besoin de l'utilisateur selon plusieurs critères (marque, modèle, année, etc.) <br/><br/>
+                    Ce concept sera élargi au fur et à mesure pour prendre en charge les différents produits convoités par nos chers utilisateurs, en l’occurrence : Immobiliers, SmartPhones, Ordinateurs, etc.
+                  </p>
+                </div>
+                {/* <div className="author-area wow fadeInUp" data-wow-delay="400ms">
                     <img src="assets/img/inner-page/signature.svg" alt="" />
                     <h6>Natrison Mongla</h6>
                     <span>(CEO &amp; Founder)</span>
-                  </div>
-                </div>
+                  </div> */}
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <WhyChoose />
+      <WhyChoose />
 
 
-        {/* <div className="drivco-gallery mb-100">
+      {/* <div className="drivco-gallery mb-100">
           <div className="container">
             <div className="row mb-50 wow fadeInUp" data-wow-delay="200ms">
               <div className="col-lg-12">
@@ -178,7 +180,7 @@ function About() {
           </div>
         </div> */}
 
-        {/* <div className="how-it-work-section mb-100">
+      {/* <div className="how-it-work-section mb-100">
           <div className="container">
             <div className="row mb-50 wow fadeInUp" data-wow-delay="200ms">
               <div className="col-lg-12 d-flex align-items-end justify-content-between gap-3 flex-wrap">
@@ -269,153 +271,152 @@ function About() {
           </div>
         </div> */}
 
-        <div className="customar-feedback-area mb-100">
-          <div className="container">
-            <div className="row mb-60 wow fadeInUp" data-wow-delay="200ms">
-              <div className="col-lg-12">
-                <div className="section-title1">
-                  <span>Retours de clients</span>
-                  <h2>Qu'est ce que nos clients disent:</h2>
+      {/* <div className="customar-feedback-area mb-100">
+        <div className="container">
+          <div className="row mb-60 wow fadeInUp" data-wow-delay="200ms">
+            <div className="col-lg-12">
+              <div className="section-title1">
+                <span>Retours de clients</span>
+                <h2>Qu'est ce que nos clients disent:</h2>
+              </div>
+            </div>
+          </div>
+          <div className="row g-4 mb-100">
+            <div className="col-lg-3 wow fadeInUp" data-wow-delay="200ms">
+              <div className="customer-feedback-left">
+                <div className="trustpilot">
+                  <h5>Excellent!</h5>
+                  <img className="star" src="assets/img/home1/icon/trustpilot-star3.svg" alt="" />
+                  <span>Based On <strong>2348</strong> Reviews</span>
+                  <img className="logo" src="assets/img/home1/icon/trustpilot-log3.svg" alt="" />
+                </div>
+                <div className="google">
+                  <img className="logo" src="assets/img/home1/icon/google3.svg" alt="" />
+                  <div className="star">
+                    <ul>
+                      <li className="active"><i className="bi bi-star-fill" /></li>
+                      <li><i className="bi bi-star-fill" /></li>
+                      <li><i className="bi bi-star-fill" /></li>
+                      <li><i className="bi bi-star-fill" /></li>
+                      <li className><i className="bi bi-star-half" /></li>
+                    </ul>
+                  </div>
+                  <span>Based On <strong>1448</strong> Reviews</span>
                 </div>
               </div>
             </div>
-            <div className="row g-4 mb-100">
-              <div className="col-lg-3 wow fadeInUp" data-wow-delay="200ms">
-                <div className="customer-feedback-left">
-                  <div className="trustpilot">
-                    <h5>Excellent!</h5>
-                    <img className="star" src="assets/img/home1/icon/trustpilot-star3.svg" alt="" />
-                    <span>Based On <strong>2348</strong> Reviews</span>
-                    <img className="logo" src="assets/img/home1/icon/trustpilot-log3.svg" alt="" />
+            <div className="col-lg-9 wow fadeInUp" data-wow-delay="200ms">
+              <div className="customer-feedback-right">
+                <Swiper {...slideSettings} className="swiper customer-feedback-slider mb-40">
+                  <div className="swiper-wrapper">
+                    <SwiperSlide className="swiper-slide">
+                      <div className="feedback-card">
+                        <div className="feedback-top">
+                          <div className="stat-area">
+                            <div className="star">
+                              <ul>
+                                <li className="active"><i className="bi bi-star-fill" /></li>
+                                <li><i className="bi bi-star-fill" /></li>
+                                <li><i className="bi bi-star-fill" /></li>
+                                <li><i className="bi bi-star-fill" /></li>
+                                <li className><i className="bi bi-star-half" /></li>
+                              </ul>
+                            </div>
+                            <span>Great Services!</span>
+                          </div>
+                          <div className="logo">
+                            <img src="assets/img/home1/icon/google3.svg" alt="" />
+                          </div>
+                        </div>
+                        <p>Drivco-Agency to the actively encourage customers to leave
+                          reviews to the help promote their products and services.”</p>
+                        <div className="author-name">
+                          <h6>Nowry Jahan</h6>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
+                      <div className="feedback-card">
+                        <div className="feedback-top">
+                          <div className="stat-area">
+                            <img src="assets/img/home1/icon/trustpilot-star.svg" alt="" />
+                            <span>Trusted Company</span>
+                          </div>
+                          <div className="logo">
+                            <img src="assets/img/home1/icon/trustpilot-log3.svg" alt="" />
+                          </div>
+                        </div>
+                        <p>Drivco-Agency customer feedback is an invaluable source of
+                          information that can help businesses improve their offerings and provide
+                          better experiences.</p>
+                        <div className="author-name">
+                          <h6>Jhon Abraham</h6>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
+                      <div className="feedback-card">
+                        <div className="feedback-top">
+                          <div className="stat-area">
+                            <div className="star">
+                              <ul>
+                                <li className="active"><i className="bi bi-star-fill" /></li>
+                                <li><i className="bi bi-star-fill" /></li>
+                                <li><i className="bi bi-star-fill" /></li>
+                                <li><i className="bi bi-star-fill" /></li>
+                                <li className><i className="bi bi-star-half" /></li>
+                              </ul>
+                            </div>
+                            <span>Great Services!</span>
+                          </div>
+                          <div className="logo">
+                            <img src="assets/img/home1/icon/google3.svg" alt="" />
+                          </div>
+                        </div>
+                        <p>Drivco-Agency to the actively encourage customers to leave
+                          reviews to the help promote their products and services.”</p>
+                        <div className="author-name">
+                          <h6>Nowry Jahan</h6>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide">
+                      <div className="feedback-card">
+                        <div className="feedback-top">
+                          <div className="stat-area">
+                            <img src="assets/img/home1/icon/trustpilot-star.svg" alt="" />
+                            <span>Trusted Company</span>
+                          </div>
+                          <div className="logo">
+                            <img src="assets/img/home1/icon/trustpilot-log3.svg" alt="" />
+                          </div>
+                        </div>
+                        <p>Drivco-Agency customer feedback is an invaluable source of
+                          information that can help businesses improve their offerings and provide
+                          better experiences.</p>
+                        <div className="author-name">
+                          <h6>Jhon Abraham</h6>
+                        </div>
+                      </div>
+                    </SwiperSlide>
                   </div>
-                  <div className="google">
-                    <img className="logo" src="assets/img/home1/icon/google3.svg" alt="" />
-                    <div className="star">
-                      <ul>
-                        <li className="active"><i className="bi bi-star-fill" /></li>
-                        <li><i className="bi bi-star-fill" /></li>
-                        <li><i className="bi bi-star-fill" /></li>
-                        <li><i className="bi bi-star-fill" /></li>
-                        <li className><i className="bi bi-star-half" /></li>
-                      </ul>
-                    </div>
-                    <span>Based On <strong>1448</strong> Reviews</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-9 wow fadeInUp" data-wow-delay="200ms">
-                <div className="customer-feedback-right">
-                  <Swiper {...slideSettings} className="swiper customer-feedback-slider mb-40">
-                    <div className="swiper-wrapper">
-                      <SwiperSlide className="swiper-slide">
-                        <div className="feedback-card">
-                          <div className="feedback-top">
-                            <div className="stat-area">
-                              <div className="star">
-                                <ul>
-                                  <li className="active"><i className="bi bi-star-fill" /></li>
-                                  <li><i className="bi bi-star-fill" /></li>
-                                  <li><i className="bi bi-star-fill" /></li>
-                                  <li><i className="bi bi-star-fill" /></li>
-                                  <li className><i className="bi bi-star-half" /></li>
-                                </ul>
-                              </div>
-                              <span>Great Services!</span>
-                            </div>
-                            <div className="logo">
-                              <img src="assets/img/home1/icon/google3.svg" alt="" />
-                            </div>
-                          </div>
-                          <p>Drivco-Agency to the actively encourage customers to leave
-                            reviews to the help promote their products and services.”</p>
-                          <div className="author-name">
-                            <h6>Nowry Jahan</h6>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="swiper-slide">
-                        <div className="feedback-card">
-                          <div className="feedback-top">
-                            <div className="stat-area">
-                              <img src="assets/img/home1/icon/trustpilot-star.svg" alt="" />
-                              <span>Trusted Company</span>
-                            </div>
-                            <div className="logo">
-                              <img src="assets/img/home1/icon/trustpilot-log3.svg" alt="" />
-                            </div>
-                          </div>
-                          <p>Drivco-Agency customer feedback is an invaluable source of
-                            information that can help businesses improve their offerings and provide
-                            better experiences.</p>
-                          <div className="author-name">
-                            <h6>Jhon Abraham</h6>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="swiper-slide">
-                        <div className="feedback-card">
-                          <div className="feedback-top">
-                            <div className="stat-area">
-                              <div className="star">
-                                <ul>
-                                  <li className="active"><i className="bi bi-star-fill" /></li>
-                                  <li><i className="bi bi-star-fill" /></li>
-                                  <li><i className="bi bi-star-fill" /></li>
-                                  <li><i className="bi bi-star-fill" /></li>
-                                  <li className><i className="bi bi-star-half" /></li>
-                                </ul>
-                              </div>
-                              <span>Great Services!</span>
-                            </div>
-                            <div className="logo">
-                              <img src="assets/img/home1/icon/google3.svg" alt="" />
-                            </div>
-                          </div>
-                          <p>Drivco-Agency to the actively encourage customers to leave
-                            reviews to the help promote their products and services.”</p>
-                          <div className="author-name">
-                            <h6>Nowry Jahan</h6>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide className="swiper-slide">
-                        <div className="feedback-card">
-                          <div className="feedback-top">
-                            <div className="stat-area">
-                              <img src="assets/img/home1/icon/trustpilot-star.svg" alt="" />
-                              <span>Trusted Company</span>
-                            </div>
-                            <div className="logo">
-                              <img src="assets/img/home1/icon/trustpilot-log3.svg" alt="" />
-                            </div>
-                          </div>
-                          <p>Drivco-Agency customer feedback is an invaluable source of
-                            information that can help businesses improve their offerings and provide
-                            better experiences.</p>
-                          <div className="author-name">
-                            <h6>Jhon Abraham</h6>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                    </div>
-                  </Swiper>
-                  <div className="row ">
-                    <div className="col-lg-12 divider">
-                      <div className="slider-btn-group style-2 justify-content-md-between justify-content-center">
-                        <div className="slider-btn prev-4 d-md-flex d-none">
-                          <svg width={11} height={19} viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 6.50008L8 0L2.90909 6.50008L8 13L0 6.50008Z" />
-                          </svg>
-                        </div>
-                        <div className="view-btn-area">
-                          <p>Thousand of People Reviews to Us</p>
-                          <Link legacyBehavior  href="/customer-review"><a className="view-btn">View All Review</a></Link>
-                        </div>
-                        <div className="slider-btn next-4 d-md-flex d-none">
-                          <svg width={11} height={19} viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 6.50008L0 0L5.09091 6.50008L0 13L8 6.50008Z" />
-                          </svg>
-                        </div>
+                </Swiper>
+                <div className="row ">
+                  <div className="col-lg-12 divider">
+                    <div className="slider-btn-group style-2 justify-content-md-between justify-content-center">
+                      <div className="slider-btn prev-4 d-md-flex d-none">
+                        <svg width={11} height={19} viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 6.50008L8 0L2.90909 6.50008L8 13L0 6.50008Z" />
+                        </svg>
+                      </div>
+                      <div className="view-btn-area">
+                        <p>Thousand of People Reviews to Us</p>
+                        <Link legacyBehavior href="/customer-review"><a className="view-btn">View All Review</a></Link>
+                      </div>
+                      <div className="slider-btn next-4 d-md-flex d-none">
+                        <svg width={11} height={19} viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 6.50008L0 0L5.09091 6.50008L0 13L8 6.50008Z" />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -423,29 +424,30 @@ function About() {
               </div>
             </div>
           </div>
-
-          <React.Fragment>
-            <ModalVideo
-              channel="youtube"
-              youtube={{ mute: 0, autoplay: 0 }}
-              isOpen={isOpen}
-              videoId="L61p2uyiMSo"
-              onClose={() => setOpen(false)} 
-            />
-          </React.Fragment>
         </div>
 
-        <Lightbox
-            className="img-fluid"
-            open={isOpenimg.openingState}
-            plugins={[Fullscreen]}
-            index={isOpenimg.openingIndex}
-            close={() => setOpenimg(false)}
-            styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
-            slides={images.map(function (elem) {
-              return { src: elem.imageBig };
-            })}
+        <React.Fragment>
+          <ModalVideo
+            channel="youtube"
+            youtube={{ mute: 0, autoplay: 0 }}
+            isOpen={isOpen}
+            videoId="L61p2uyiMSo"
+            onClose={() => setOpen(false)}
           />
+        </React.Fragment>
+      </div> */}
+
+      <Lightbox
+        className="img-fluid"
+        open={isOpenimg.openingState}
+        plugins={[Fullscreen]}
+        index={isOpenimg.openingIndex}
+        close={() => setOpenimg(false)}
+        styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
+        slides={images.map(function (elem) {
+          return { src: elem.imageBig };
+        })}
+      />
     </MainLayout>
   )
 }

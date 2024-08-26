@@ -13,10 +13,12 @@ import Preloader from "../components/common/Preloader";
 import { AuthProvider } from "@/src/contexts/AuthContext";
 import { CarProvider } from "@/src/contexts/CarContext"; // Import the CarProvider
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { NextIntlClientProvider } from "next-intl";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
-
+  const router = useRouter();
   const handlePreloaderClose = () => {
     setLoading(false);
   };
@@ -31,6 +33,10 @@ function MyApp({ Component, pageProps }) {
     import("../../public/assets/js/bootstrap.min.js");
   }, []);
   return (
+    <NextIntlClientProvider
+      locale={router.locale}
+      messages={pageProps.messages}
+      >
     <AuthProvider>
       <CarProvider>
         {loading ? (
@@ -77,6 +83,7 @@ function MyApp({ Component, pageProps }) {
         )}
       </CarProvider>
     </AuthProvider>
+    </NextIntlClientProvider>
   );
 }
 

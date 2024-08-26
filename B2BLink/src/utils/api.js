@@ -2,16 +2,17 @@ import axios from 'axios';
 
 const serverName = '/api';
 
-export const fetchCars = async (condition, page) => {
+export const fetchCars = async (condition, alert, page) => {
   try {
     let url = '';
     if (condition === 'New Car') {
-      url = `${serverName}/new/announcements?page=${page}&size=10&sort=_id,desc`;
+      url = `${serverName}/new/announcements?page=${page}&size=10&sort=_id,desc${alert ? "&alert=" + alert : ""}`;
     } else {
-      url = `${serverName}/announcements?page=${page}&size=10&sort=datePosted,desc`;
+      url = `${serverName}/announcements?page=${page}&size=10&sort=datePosted,desc${alert ? "&alert=" + alert : ""}`;
     }
-
+    console.log("fetching cars from", url);
     const response = await axios.get(url);
+    console.log(response);
     return response.data;
   } catch (error) {
     console.error('Error fetching cars', error);
@@ -19,9 +20,14 @@ export const fetchCars = async (condition, page) => {
   }
 };
 
-export const fetchCarDetails = async (id) => {
+export const fetchCarDetails = async (id, condition) => {
   try {
-    const response = await axios.get(`https://smartalert-backend-stag.b2blink.ma:8080/api/cars/${id}`);
+    let response;
+    console.log("condition detail car", condition, id);
+    if (condition === "new")
+      response = await axios.get(`/api/details-neuf?id=${id}`);
+    else
+      response = await axios.get(`/api/details-occas?id=${id}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching car details', error);
@@ -140,3 +146,121 @@ export const signup = async ({ firstName, email, password }) => {
     throw error;
   }
 };
+
+export async function search(
+  productId,
+  values,
+  alertLabel,
+  type
+) {
+  console.log("ENTERING search with ", type);
+  let result = [];
+  console.log("values to send::: ", values);
+  // console.log("getting announcements for user of token : " + token);
+
+  // if (values.valueNameLabel != t("Common.all")) {
+  if (values.valueNameLabel && values.valueNameLabel != "Tout") {
+    if (values.valueName.split("|")[0]) {
+      result.push({
+        label: "brand",
+        key: values.valueName.split("|")[2],
+        valeur: values.valueNameLabel,
+        valeurObject: {
+          id: values.valueName.split("|")[1]
+        },
+        criteria: {
+          id: values.valueName.split("|")[0],
+        },
+      });
+    }
+  }
+  // if (values.valueNameModelLabel != t("Common.all")) {
+  if (values.valueNameModelLabel && values.valueNameModelLabel != "Tout") {
+    if (values.valueNameModel) {
+      result.push({
+        label: "model",
+        key: values.valueNameModel.split("|")[2],
+        valeur: values.valueNameModelLabel,
+        valeurObject: {
+          id: values.valueNameModel.split("|")[1]
+        },
+        criteria: {
+          id: values.valueNameModel.split("|")[0],
+        },
+      });
+    }
+  }
+
+  Object.keys(values).map((element) => {
+    let key = "";
+    if (
+      element.includes("valueNameModel") ||
+      element.includes("valueLocationSect") ||
+      element.includes("valueLocationCity") ||
+      element.includes("valueSource") ||
+      element.includes("valueName")
+    ) {
+    } else {
+      if (element.includes("min")) key = "min";
+      else if (element.includes("max")) key = "max";
+      else key = element.split("|")[1];
+      if (values[element]) {
+        // console.log(values[element]);
+
+        result.push({
+          label: key,
+          key: key,
+          valeur: (values[element] + "")?.split("$")[0].split("&")[1],
+          valeurObject: (values[element] + "")?.split("$")[0].split("&").length > 2 ?
+            {
+              id: (values[element] + "")?.split("$")[0].split("&")[1],
+            } : null,
+          criteria: {
+            id: element.split("|")[0].split("$")[0] + "",
+          },
+        });
+      }
+    }
+  });
+
+  let data = {};
+  if (
+    values.valueLocationSect &&
+    // values.valueLocationSectLabel != t("Common.all")
+    values.valueLocationSectLabel != "Tout"
+  ) {
+    data.secteur = {
+      id: values.valueLocationSect,
+    };
+  }
+  data.product = {
+    id: productId,
+  };
+  // if (values.valueLocationCityLabel && values.valueLocationCityLabel != t("Common.all")) {
+  if (values.valueLocationCityLabel && values.valueLocationCityLabel != "Tout") {
+    data.city = {
+      id: values.valueLocationCity,
+    };
+  }
+  // if (values.valueSourceLabel && values.valueSourceLabel != t("Common.all")) {
+  if (values.valueSourceLabel && values.valueSourceLabel != "Tout") {
+    data.sources = [{
+      id: values.valueSource
+    }]
+  }
+  data.label = alertLabel;
+  data.searches = result;
+
+  let uri = `/api/search-occasion`
+  if (type == "New Car") {
+    uri = `/api/search-neuf`
+  }
+  console.log("search object", data);
+  console.log("uri", uri);
+  return axios
+    .post(uri, data)
+    .then((response) => {
+      console.log("search response", response.data)
+      return response.data;
+    });
+}

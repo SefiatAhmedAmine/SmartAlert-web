@@ -13,7 +13,7 @@ function index() {
       <div className={`banner-section1 ${styles.gradientBackground}`}>
         <div className="container">
           <div className="row g-xl-4 gy-5">
-            <div className="col-xxl-8 col-xl-7 d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
+            <div className="d-flex align-items-center wow fadeInUp" data-wow-delay="200ms">
               <div className="banner-content">
               <span className={`sub-title ${styles.subtitle}`}>
                 Performance et Rapidité Exceptionnelles
@@ -25,7 +25,7 @@ function index() {
                 </span>
                 <h1>Trouver la voiture <span> de vos rêves.</span></h1>
                 <p className={styles.subtitle} style={{textAlign: 'justify', maxWidth: '60%'}}>Trouvez des voitures neuves ou d'occasion avec toutes les caractéristiques de votre choix très rapidement.</p>
-                <div className="customar-review">
+                {/* <div className="customar-review">
                   <ul>
                     <li>
                       <a href="#">
@@ -70,210 +70,7 @@ function index() {
                       </a>
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-5 wow zoomIn" data-wow-delay="300ms">
-              <div className="car-filter-area">
-                <h4>Trouver la voiture de vos reves</h4>
-                <ul className="nav nav-tabs car-category" id="myTab1" role="tablist">
-                  <li className="nav-item" role="presentation">
-                    <button className="nav-link active" id="new-car-tab" data-bs-toggle="tab" data-bs-target="#new-car" type="button" role="tab" aria-controls="new-car" aria-selected="true">
-                      <img src="assets/img/home1/icon/car-01.svg" alt="" />
-                      <span>Neuve</span>
-                    </button>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <button className="nav-link" id="used-car-tab" data-bs-toggle="tab" data-bs-target="#used-car" type="button" role="tab" aria-controls="used-car" aria-selected="false">
-                      <img src="assets/img/home1/icon/car-01.svg" alt="" />
-                      <span>Occasion</span>
-                    </button>
-                  </li>
-                  {/* <li className="nav-item" role="presentation">
-                    <button className="nav-link" id="auction-tab" data-bs-toggle="tab" data-bs-target="#auction" type="button" role="tab" aria-controls="auction" aria-selected="false">
-                      <img src="assets/img/home1/icon/car-01.svg" alt="" />
-                      <span>Auction</span>
-                    </button>
-                  </li> */}
-                </ul>
-                <div className="tab-content" id="myTabContent1">
-                  <div className="tab-pane fade show active" id="new-car" role="tabpanel" aria-labelledby="new-car-tab">
-                    {/* <ul className="nav nav-tabs car-type" id="myTab2" role="tablist">
-                      <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="budget1-tab" data-bs-toggle="tab" data-bs-target="#budget1" type="button" role="tab" aria-controls="budget1" aria-selected="true">
-                          <span />Par Budget
-                        </button>
-                      </li>
-                      <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="brand1-tab" data-bs-toggle="tab" data-bs-target="#brand1" type="button" role="tab" aria-controls="brand1" aria-selected="false">
-                          <span />Par Marque
-                        </button>
-                      </li>
-                    </ul> */}
-                    <div className="tab-content tab-content3" id="myTabContent2">
-                      <div className="tab-pane fade show active" id="budget1" role="tabpanel" aria-labelledby="budget1-tab">
-                        <div className="form-inner mb-25">
-                          <label>Selectionner Budget*</label>
-                          <SelectComponent customClass="select" options={optionsBudget} placeholder="Ex: 100000 - 250000 MAD" />
-                      
-                        </div>
-                        <div className="form-inner mb-25">
-                          <label>Selectionner Vehicules*</label>
-                          <SelectComponent customClass="select" options={options} placeholder="selectionner vehicles" />
-                          
-                        </div>
-                        <div className="form-inner last">
-                          <button className="primary-btn1" type="submit">CHERCHER VEHICULES</button>
-                        </div>
-                        <div className="advanced-btn">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#adSearchModal01">
-                            Filtres avancées
-                            <svg width={13} height={10} viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3.48336 0V8.0272L4.16668 7.36221L4.91394 8.09055L2.95489 10L0.99585 8.09055L1.74311 7.36221L2.42642 8.0272V0H3.48336ZM8.23961 7.72638V8.75657H5.59725V7.72638H8.23961ZM9.82502 5.15092V6.18111H5.59725V5.15092H9.82502ZM11.4104 2.57546V3.60565H5.59725V2.57546H11.4104ZM12.9958 0V1.03018H5.59725V0H12.9958Z" />
-                            </svg>                   
-                          </button>
-                        </div>
-                      </div>
-                      <div className="tab-pane fade" id="brand1" role="tabpanel" aria-labelledby="brand1-tab">
-                        <div className="form-inner mb-25">
-                          <label>Select Budget*</label>
-                          <SelectComponent options={optionsBudget} customClass="select" placeholder="Ex: 1 - 5 lakh" />
-                        </div>
-                        <div className="form-inner mb-25">
-                          <label>Select Vehicles*</label>
-                          <SelectComponent options={options} customClass="select"  placeholder="select vehicles" />
-                        </div>
-                        <div className="form-inner last">
-                          <button className="primary-btn1" type="submit">SEARCH 12463 VEHICLES</button>
-                        </div>
-                        <div className="advanced-btn">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#adSearchModal01">
-                            Advanced Filter
-                            <svg width={13} height={10} viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3.48336 0V8.0272L4.16668 7.36221L4.91394 8.09055L2.95489 10L0.99585 8.09055L1.74311 7.36221L2.42642 8.0272V0H3.48336ZM8.23961 7.72638V8.75657H5.59725V7.72638H8.23961ZM9.82502 5.15092V6.18111H5.59725V5.15092H9.82502ZM11.4104 2.57546V3.60565H5.59725V2.57546H11.4104ZM12.9958 0V1.03018H5.59725V0H12.9958Z" />
-                            </svg>                   
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="tab-pane fade" id="used-car" role="tabpanel" aria-labelledby="used-car-tab">
-                    <ul className="nav nav-tabs car-type" id="myTab3" role="tablist">
-                      <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="budget2-tab" data-bs-toggle="tab" data-bs-target="#budget2" type="button" role="tab" aria-controls="budget2" aria-selected="true">
-                          <span />By Budget
-                        </button>
-                      </li>
-                      <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="brand3-tab" data-bs-toggle="tab" data-bs-target="#brand3" type="button" role="tab" aria-controls="brand3" aria-selected="false">
-                          <span />By Brand
-                        </button>
-                      </li>
-                    </ul>
-                    <div className="tab-content" id="myTabContent3">
-                      <div className="tab-pane fade show active" id="budget2" role="tabpanel" aria-labelledby="budget2-tab">
-                        <div className="form-inner mb-25">
-                          <label>Select Budget*</label>
-                        <SelectComponent options={optionsBudget} customClass="select" placeholder="Ex: 1 - 5 lakh" />
-                        </div>
-                        <div className="form-inner mb-25">
-                          <label>Select Vehicles*</label>
-                          <SelectComponent options={options} customClass="select"  placeholder="select vehicles" />
-                        </div>
-                        <div className="form-inner last">
-                          <button className="primary-btn1" type="submit">SEARCH 12463 VEHICLES</button>
-                        </div>
-                        <div className="advanced-btn">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#adSearchModal01">
-                            Advanced Filter
-                            <svg width={13} height={10} viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3.48336 0V8.0272L4.16668 7.36221L4.91394 8.09055L2.95489 10L0.99585 8.09055L1.74311 7.36221L2.42642 8.0272V0H3.48336ZM8.23961 7.72638V8.75657H5.59725V7.72638H8.23961ZM9.82502 5.15092V6.18111H5.59725V5.15092H9.82502ZM11.4104 2.57546V3.60565H5.59725V2.57546H11.4104ZM12.9958 0V1.03018H5.59725V0H12.9958Z" />
-                            </svg>                   
-                          </button>
-                        </div>
-                      </div>
-                      <div className="tab-pane fade" id="brand3" role="tabpanel" aria-labelledby="brand3-tab">
-                        <div className="form-inner">
-                          <label>Select Budget*</label>
-                        <SelectComponent customClass="select" options={optionsBudget} placeholder="Ex: 1 - 5 lakh" />
-                        </div>
-                        <div className="form-inner">
-                          <label>Select Vehicles*</label>
-                        <SelectComponent customClass="select" options={options} placeholder="select vehicles" />
-                        </div>
-                        <div className="form-inner last">
-                          <button className="primary-btn1" type="submit">SEARCH 12463 VEHICLES</button>
-                        </div>
-                        <div className="advanced-btn">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#adSearchModal01">
-                            Advanced Filter
-                            <svg width={13} height={10} viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3.48336 0V8.0272L4.16668 7.36221L4.91394 8.09055L2.95489 10L0.99585 8.09055L1.74311 7.36221L2.42642 8.0272V0H3.48336ZM8.23961 7.72638V8.75657H5.59725V7.72638H8.23961ZM9.82502 5.15092V6.18111H5.59725V5.15092H9.82502ZM11.4104 2.57546V3.60565H5.59725V2.57546H11.4104ZM12.9958 0V1.03018H5.59725V0H12.9958Z" />
-                            </svg>                   
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="tab-pane fade" id="auction" role="tabpanel" aria-labelledby="auction-tab">
-                    <ul className="nav nav-tabs car-type" id="myTab4" role="tablist">
-                      <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="budget4-tab" data-bs-toggle="tab" data-bs-target="#budget4" type="button" role="tab" aria-controls="budget4" aria-selected="true">
-                          <span />By Budget
-                        </button>
-                      </li>
-                      <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="brand4-tab" data-bs-toggle="tab" data-bs-target="#brand4" type="button" role="tab" aria-controls="brand4" aria-selected="false">
-                          <span />By Brand
-                        </button>
-                      </li>
-                    </ul>
-                    <div className="tab-content" id="myTabContent4">
-                      <div className="tab-pane fade show active" id="budget4" role="tabpanel" aria-labelledby="budget4-tab">
-                        <div className="form-inner">
-                          <label>Select Budget*</label>
-                        <SelectComponent customClass="select" options={optionsBudget} placeholder="Ex: 1 - 5 lakh" />
-                        </div>
-                        <div className="form-inner">
-                          <label>Select Vehicles*</label>
-                        <SelectComponent customClass="select" options={options} placeholder="select vehicles" />
-                        </div>
-                        <div className="form-inner last">
-                          <button className="primary-btn1" type="submit">SEARCH 12463 VEHICLES</button>
-                        </div>
-                        <div className="advanced-btn">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#adSearchModal01">
-                            Advanced Filter
-                            <svg width={13} height={10} viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3.48336 0V8.0272L4.16668 7.36221L4.91394 8.09055L2.95489 10L0.99585 8.09055L1.74311 7.36221L2.42642 8.0272V0H3.48336ZM8.23961 7.72638V8.75657H5.59725V7.72638H8.23961ZM9.82502 5.15092V6.18111H5.59725V5.15092H9.82502ZM11.4104 2.57546V3.60565H5.59725V2.57546H11.4104ZM12.9958 0V1.03018H5.59725V0H12.9958Z" />
-                            </svg>                   
-                          </button>
-                        </div>
-                      </div>
-                      <div className="tab-pane fade" id="brand4" role="tabpanel" aria-labelledby="brand4-tab">
-                        <div className="form-inner">
-                          <label>Select Budget*</label>
-                          <SelectComponent customClass="select" options={optionsBudget} placeholder="Ex: 1 - 5 lakh" />
-                        </div>
-                        <div className="form-inner">
-                          <label>Select Vehicles*</label>
-                      <SelectComponent customClass="select" options={options} placeholder="select vehicles" />
-                        </div>
-                        <div className="form-inner last">
-                          <button className="primary-btn1" type="submit">SEARCH 12463 VEHICLES</button>
-                        </div>
-                        <div className="advanced-btn">
-                          <button type="button" data-bs-toggle="modal" data-bs-target="#adSearchModal01">
-                            Advanced Filter
-                            <svg width={13} height={10} viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M3.48336 0V8.0272L4.16668 7.36221L4.91394 8.09055L2.95489 10L0.99585 8.09055L1.74311 7.36221L2.42642 8.0272V0H3.48336ZM8.23961 7.72638V8.75657H5.59725V7.72638H8.23961ZM9.82502 5.15092V6.18111H5.59725V5.15092H9.82502ZM11.4104 2.57546V3.60565H5.59725V2.57546H11.4104ZM12.9958 0V1.03018H5.59725V0H12.9958Z" />
-                            </svg>                   
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

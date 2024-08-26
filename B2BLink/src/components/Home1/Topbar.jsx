@@ -2,14 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/src/contexts/AuthContext';
 import styles from './TopBar.module.css'
+import { useTranslations } from 'next-intl';
 
 function Topbar() {
+  const t = useTranslations();
   const { user, logout } = useAuth();
   for (const key in user) {
     console.log(key);
     console.log(user[key]);
   }
-  console.log(typeof(logout));
+  console.log(typeof (logout));
 
   const handleLogout = async () => {
     try {
@@ -23,17 +25,21 @@ function Topbar() {
   return (
     <div className="top-bar">
       <div className="company-logo">
-        <Link legacyBehavior href="/"><a><img className={styles.logo} src="assets/img/b2blink.png" alt="" /></a></Link>
+        <Link legacyBehavior href="/">
+          <a>
+            <img className={styles.logo} src="assets/img/smartalert.png" alt="" />
+          </a>
+        </Link>
       </div>
-      <div className="search-area">
+      {/* <div className="search-area">
         <form>
           <div className="form-inner">
             <input type="text" placeholder="Chercher un vehicule ou une marque" />
             <button type="submit" className={styles.bgPrimary}><i className="bi bi-search" /></button>
           </div>
         </form>
-      </div>
-      <div className="topbar-right">
+      </div> */}
+      {/* <div className="topbar-right">
         <ul>
           <li className="d-xl-flex d-none">
             <button className="sell-btn" type="button" data-bs-toggle="modal" data-bs-target="#sellUsModal01">
@@ -67,7 +73,7 @@ function Topbar() {
             </li>
           )}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -16,7 +16,9 @@ import RecomandationCar from "../components/Home1/RecommendedCar/index";
 import TopRateUsedCars from "../components/Home1/TopRateUsedCars/index";
 import Blog from "../components/Home1/Blog/index";
 import CarListingLeftSidebar from './car-listing-left-sidebar';
+import { useTranslations } from "next-intl";
 export default function Home() {
+  const t = useTranslations()
   return (
     <>
       <Modals />
@@ -24,7 +26,7 @@ export default function Home() {
       <Header />
       <Banner />
       <QuickLinkArea />
-      <BrandCategory />
+      {/* <BrandCategory /> */}
       {/* <MostSearchedUsersCar /> */}
       {/* <RecentLaunchedCar /> */}
       <WhyChoose />
@@ -38,4 +40,15 @@ export default function Home() {
       <Footer1 />
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      // You can get the messages from anywhere you like. The recommended
+      // pattern is to put them in JSON files separated by locale and read
+      // the desired one based on the `locale` received from Next.js.
+      messages: (await import(`../messages/${context.locale}.json`)).default
+    }
+  };
 }

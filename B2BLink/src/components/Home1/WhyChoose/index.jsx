@@ -1,19 +1,13 @@
+import { useTranslations } from 'next-intl';
 import React from 'react'
 import CountUp from 'react-countup';
 
 function index() {
+  const t = useTranslations()
   return (
   <div className="why-choose-area pt-90 pb-90 mb-100" style={{  background: 'linear-gradient(to right, #FFA07A, #FFDAB9, #FFE4B5)'
   }}>
       <div className="container">
-        <div className="row mb-60 wow fadeInUp" data-wow-delay="200ms">
-          <div className="col-lg-12 d-flex justify-content-center">
-            <div className="section-title1 text-center">
-              <span className='text-black-500'>Best Car Agency</span>
-              <h2>Pourquoi Choisir SmartAlert</h2>
-            </div>
-          </div>
-        </div>
         <div className="row mb-50 g-4 justify-content-center">
           <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
             <div className="choose-card">
@@ -111,7 +105,7 @@ function index() {
             </div>
           </div>
         </div>
-        <div className="row wow fadeInUp" data-wow-delay="200ms">
+        {/* <div className="row wow fadeInUp" data-wow-delay="200ms">
           <div className="col-lg-12 d-flex justify-content-center">
             <div className="trustpilot-review">
               <strong>Excellent!</strong>
@@ -121,7 +115,7 @@ function index() {
               <img src="assets/img/home1/icon/trustpilot-logo.svg" alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import CardMenu from "./CardMenu";
+import { useTranslations } from "next-intl";
 
 const initialState = {
   activeMenu: "",
@@ -42,13 +43,16 @@ function reducer(state, action) {
 }
 
 function Header() {
+  const t = useTranslations()
   const [state, dispatch] = useReducer(reducer, initialState);
   const headerRef = useRef(null);
   const handleScroll = () => {
     const { scrollY } = window;
     dispatch({ type: "setScrollY", payload: scrollY });
   };
-  const currentRoute = useRouter().pathname;
+  const router = useRouter();
+  const currentRoute = router.pathname;
+  const { condition } = router.query;
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -74,23 +78,25 @@ function Header() {
         state.scrollY > 10 ? "header-area style-1 sticky" : "header-area style-1"
       }
     >
-      <div className="header-logo d-lg-none d-flex">
+      {/* <div className="header-logo d-lg-none d-flex">
         <Link href="/">
           <img alt="image" className="img-fluid" src="assets/img/b2blink.png" height="47" width="218" />
         </Link>
-      </div>
+      </div> */}
       <div className={`main-menu ${state.isSidebarOpen ? "show-menu" : ""}`}>
         <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
           <div className="mobile-logo-wrap">
             <Link href="/">
-              <img alt="image" src="assets/img/b2blink.png" height="47" width="218" />
+              <img alt="image" src="assets/img/smartalert.png" height="47" width="218" />
             </Link>
           </div>
         </div>
         <ul className="menu-list">
-          <li className={`menu-item-has-children ${currentRoute === "/" ? "active" : ""}`}>
+          <li
+            className={`${currentRoute === "/" ? "active" : ""}`}
+          >
             <a
-              href="#"
+              href="/"
               className={`drop-down ${state.activeMenu === "home-one" ? "active" : ""}`}
             >
               Accueil
@@ -100,13 +106,16 @@ function Header() {
               className={`bi bi-${state.activeMenu === "home-one" ? "dash" : "plus"} dropdown-icon`}
             />
           </li>
-          <li className="position-inherit">
-            <a href="#" className="drop-down">NEUF</a>
+          <li
+            // className="position-inherit"
+            className={`${(currentRoute === "/car-listing-left-sidebar" && condition ==="new" )? "active" : ""}`}
+          >
+            <a href="/car-listing-left-sidebar?condition=new" className="drop-down">NEUF</a>
             <i
               onClick={() => toggleMenu("new-car")}
               className={`bi bi-${state.activeMenu === "new-car" ? "dash" : "plus"} dropdown-icon`}
             />
-            <div className={`mega-menu ${state.activeMenu === "new-car" ? "d-block" : ""}`}>
+            {/* <div className={`mega-menu ${state.activeMenu === "new-car" ? "d-block" : ""}`}>
               <ul className="menu-row">
                 <li className="menu-single-item">
                   <h6>Browse by Brand</h6>
@@ -259,15 +268,18 @@ function Header() {
                   </ul>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </li>
-          <li className="position-inherit">
-            <a href="#" className="drop-down">OCCASION</a>
+          <li
+            // className="position-inherit"
+            className={`${(currentRoute === "/car-listing-left-sidebar" && condition ==="used") ? "active" : ""}`}
+          >
+            <a href="/car-listing-left-sidebar?condition=used" className="drop-down">OCCASION</a>
             <i
               onClick={() => toggleMenu("use-car")}
               className={`bi bi-${state.activeMenu === "use-car" ? "dash" : "plus"} dropdown-icon`}
             />
-            <div className={`mega-menu ${state.activeMenu === "use-car" ? "d-block" : ""}`}>
+            {/* <div className={`mega-menu ${state.activeMenu === "use-car" ? "d-block" : ""}`}>
               <ul className="menu-row">
                 <li className="menu-single-item">
                   <h6>Browse by Brand</h6>
@@ -420,9 +432,9 @@ function Header() {
                   </ul>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </li>
-          <li className="menu-item-has-children">
+          {/* <li className="menu-item-has-children">
             <a href="#" className="drop-down">MENU</a>
             <i
               onClick={() => toggleMenu("pages")}
@@ -463,24 +475,28 @@ function Header() {
                 </ul>
               </li>
             </ul>
-          </li>
-          <li>
+          </li> */}
+          <li
+            className={`${currentRoute.startsWith("/contact") ? "active" : ""}`}
+          >
             <Link href="/contact">
               NOUS CONTACTER
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/car-listing-no-sidebar">
               VOS FAVORIS
             </Link>
-          </li>
-          <li>
+          </li> */}
+          <li
+            className={`${currentRoute.startsWith("/about") ? "active" : ""}`}
+          >
             <Link href="/about">
               A Propos
             </Link>
           </li>
         </ul>
-        <div className="topbar-right d-lg-none d-block">
+        {/* <div className="topbar-right d-lg-none d-block">
           <a href="#">
             <svg
               width={16}
@@ -518,7 +534,7 @@ function Header() {
             </svg>
             S'INSCRIRE
           </a>
-        </div>
+        </div> */}
         <div className="hotline-area d-lg-none d-flex">
           <div className="icon">
             <svg
@@ -550,7 +566,7 @@ function Header() {
             <h6><a href="tel:+2120658176213">+06 58 17 62 13</a></h6>
           </div>
         </div>
-        <div className={`sidebar-button mobile-menu-btn ${state.isSidebarOpen ? "active" : "" }`} onClick={toggleSidebar}>
+        <div className={`sidebar-button mobile-menu-btn ${state.isSidebarOpen ? "active" : ""}`} onClick={toggleSidebar}>
           <span />
         </div>
       </div>

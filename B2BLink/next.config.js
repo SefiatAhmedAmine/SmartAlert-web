@@ -1,4 +1,5 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const { i18n } = require('./next-i18next.config.js');
 
 module.exports = {
   async rewrites() {
@@ -17,4 +18,5 @@ module.exports = {
     }
     return config;
   },
+  i18n,
 };
