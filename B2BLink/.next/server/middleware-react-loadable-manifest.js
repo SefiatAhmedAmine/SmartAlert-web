@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"_app.js -> ../../public/assets/js/bootstrap.min.js":{"id":6332,"files":["static/chunks/332.91d6ccb1c899d1a3.js"]}}';

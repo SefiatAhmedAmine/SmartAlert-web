@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from './choiceChip.module.css'
+import styles from './ChoiceChip.module.css'
 import PropTypes from 'prop-types'
 import Select from 'react-select';
 import { useLocale, useTranslations } from 'next-intl';
